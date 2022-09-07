@@ -27,7 +27,7 @@ class HttpService {
       if (kDebugMode) {
         print("Gagal");
       }
-      return null;
+      return List.empty();
     }
   }
 }

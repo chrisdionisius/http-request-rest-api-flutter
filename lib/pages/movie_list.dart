@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rest_example/services/http_service.dart';
 
+import 'movie_detail.dart';
+
 class MovieList extends StatefulWidget {
   const MovieList({Key? key}) : super(key: key);
 
@@ -35,21 +37,28 @@ class _MovieListState extends State<MovieList> {
         title: const Text("Popular Movies List"),
       ),
       body: ListView.builder(
-          itemCount: moviesCount ?? 0,
-          itemBuilder: (context, int position) {
-            return Card(
-              color: Colors.white,
-              elevation: 2,
-              child: ListTile(
-                title: Text(movies![position].title),
-                subtitle: Text("Rating = ${movies![position].voteAverage}"),
-                leading: CircleAvatar(
-                  backgroundColor: Colors.blueGrey,
-                  child: Text(movies![position].title[0]),
-                ),
+        itemCount: moviesCount ?? 0,
+        itemBuilder: (context, int position) {
+          return Card(
+            color: Colors.white,
+            elevation: 2,
+            child: ListTile(
+              title: Text(movies![position].title),
+              subtitle: Text("Rating = ${movies![position].voteAverage}"),
+              leading: CircleAvatar(
+                backgroundColor: Colors.blueGrey,
+                child: Text(movies![position].title[0]),
               ),
-            );
-          }),
+              onTap: () {
+                MaterialPageRoute route = MaterialPageRoute(
+                  builder: (_) => MovieDetail(movies![position]),
+                );
+                Navigator.push(context, route);
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 }
