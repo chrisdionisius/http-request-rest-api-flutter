@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_example/pages/movie_list.dart';
+import 'package:flutter_rest_example/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const HomePage(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MovieList();
   }
 }

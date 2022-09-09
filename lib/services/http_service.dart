@@ -10,9 +10,30 @@ class HttpService {
   final String baseUrl = 'https://api.themoviedb.org/3';
   final String imageUrl = 'https://image.tmdb.org/t/p/w500';
   final String popularMoviesUrl = '/movie/popular';
+  final String upcomingMoviesUrl = '/movie/upcoming';
 
   Future<List?> getPopularMovies() async {
     final String uri = '$baseUrl$popularMoviesUrl?api_key=$apiKey';
+    http.Response result = await http.get(Uri.parse(uri));
+
+    if (result.statusCode == HttpStatus.ok) {
+      if (kDebugMode) {
+        print("Sukses");
+      }
+      final jsonResponse = json.decode(result.body);
+      final moviesMap = jsonResponse['results'];
+      List movies = moviesMap.map((movie) => Movie.fromJson(movie)).toList();
+      return movies;
+    } else {
+      if (kDebugMode) {
+        print("Gagal");
+      }
+      return List.empty();
+    }
+  }
+
+  Future<List?> getUpcomingMovies() async {
+    final String uri = '$baseUrl$upcomingMoviesUrl?api_key=$apiKey';
     http.Response result = await http.get(Uri.parse(uri));
 
     if (result.statusCode == HttpStatus.ok) {

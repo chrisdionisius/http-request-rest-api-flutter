@@ -3,6 +3,8 @@ class Movie {
   String? title;
   String? posterPath;
   String? overview;
+  String? releaseDate;
+  String? originalLanguage;
   double? voteAverage;
   Movie({
     this.id,
@@ -10,6 +12,8 @@ class Movie {
     this.posterPath,
     this.overview,
     this.voteAverage,
+    this.originalLanguage,
+    this.releaseDate,
   });
 
   Movie.fromJson(Map<String, dynamic> json) {
@@ -17,6 +21,8 @@ class Movie {
     title = json['title'];
     posterPath = json['poster_path'];
     overview = json['overview'];
+    releaseDate = json['release_date'];
+    originalLanguage = json['original_language'];
     voteAverage = json['vote_average'].toDouble();
   }
 }
