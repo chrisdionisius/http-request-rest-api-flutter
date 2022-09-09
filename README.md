@@ -1,16 +1,17 @@
 # flutter_rest_example
 
-A new Flutter project.
+Praktikum Pertemuan 24 TSA Mobile Flutter Program - Penggunaan REST API dengan Flutter
 
-## Getting Started
+# Screenshoot Project
 
-This project is a starting point for a Flutter application.
+![Screenshot Hello World](images/SS_project_1.png)
+Laman list film
 
-A few resources to get you started if this is your first Flutter project:
+![Screenshot Hello World](images/SS_project_2.png)
+Laman detail film
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Resource
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+API: https://www.themoviedb.org/documentation/api
+<br>
+UI: https://github.com/tustoz/netflix_redesign
